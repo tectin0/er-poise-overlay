@@ -1,4 +1,4 @@
-# Elden Ring Toughness Live
+# Elden Ring Poise Overlay
 
 ## Don't use it online
 ### Last updated 1.12.3 (works as long as it works)
