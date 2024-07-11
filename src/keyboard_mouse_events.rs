@@ -2,7 +2,7 @@ use std::sync::LazyLock;
 
 use device_query::{DeviceQuery, DeviceState, Keycode, MouseButton};
 
-static DEVICE_STATE: LazyLock<DeviceState> = LazyLock::new(|| DeviceState::new());
+static DEVICE_STATE: LazyLock<DeviceState> = LazyLock::new(DeviceState::new);
 
 pub fn is_key_event(key: &Keycode) -> bool {
     let keys: Vec<Keycode> = DEVICE_STATE.get_keys();

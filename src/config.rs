@@ -9,4 +9,4 @@ pub struct Config {
     pub pid: Option<u32>,
 }
 
-pub static CONFIG: LazyLock<Config> = LazyLock::new(|| Config::parse());
+pub static CONFIG: LazyLock<Config> = LazyLock::new(Config::parse);

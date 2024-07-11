@@ -46,7 +46,7 @@ unsafe extern "system" fn window_callback(hwnd: HWND, l_param: LPARAM) -> i32 {
         return 0;
     }
 
-    return 1;
+    1
 }
 
 #[cfg(test)]

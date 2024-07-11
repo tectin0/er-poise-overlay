@@ -53,19 +53,19 @@ pub const WORLD_CHR_MAN: LazyLock<usize> = LazyLock::new(|| {
             .module(MODULE_NAME)
             .map_err(|e| anyhow::anyhow!("Failed to get module: {:?}", e))?;
 
-        aobscan::PatternBuilder::from_ida_style(&SIGNATURE)
+        aobscan::PatternBuilder::from_ida_style(SIGNATURE)
             .context("Failed to build pattern from IDA style signature")?
             .with_all_threads()
             .build()
             .scan(module.data(), |addrs: usize| {
                 address = addrs;
-                return true;
+                true
             });
 
         const OFFSET: usize = 3;
         const ADDITIONAL: usize = 7;
 
-        address = ELDENRING.process_base_address + address;
+        address += ELDENRING.process_base_address;
 
         address = address
             + ELDENRING

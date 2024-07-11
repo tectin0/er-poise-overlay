@@ -17,7 +17,7 @@ pub use keyboard_mouse_events::{is_key_event, is_mouse_event};
 
 pub fn error_to_cmd(message: &str) {
     std::process::Command::new("cmd")
-        .args(&["/C", "echo", &format!("{}", message), "&", "pause"])
+        .args(["/C", "echo", message, "&", "pause"])
         .status()
         .unwrap();
 }
