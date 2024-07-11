@@ -4,7 +4,7 @@ use std::{collections::BTreeSet, time::Duration};
 
 use eframe::egui;
 use egui_plot::{uniform_grid_spacer, Line, Plot, PlotPoints, VLine};
-use er_toughness_overlay::{
+use er_poise_overlay::{
     error_to_cmd, get_toughness, is_key_event, is_mouse_event, RESOLUTION,
     TOUGHNESS_UPDATE_INTERVAL,
 };
